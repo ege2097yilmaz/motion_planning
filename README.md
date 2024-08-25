@@ -237,7 +237,7 @@ Motion Planning is achieved through the following steps:
 - **Unit Tests:** Added to all modified parts of the code to ensure accuracy and reliability.
 - **Comparison:** Review all changes [by comparing with the last commit of the original framework](https://github.com/yosuah/nd013-c5-planning-starter/compare/976205277cbb3c6f5bda08f01522890eb4d6e3f3...HEAD). All `NOTE` comments are by me, while `TODO` comments were pre-existing.
 
-![Sample screen capture from project](planning_screencap_lowres_short.gif)
+![Sample screen capture from project](planning.giff)
 *(Video shown at 4x simulation speed; the simulation can be further sped up if required.)*
 
 [Watch the higher quality video](planning.webm)
