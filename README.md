@@ -233,9 +233,8 @@ Motion Planning is achieved through the following steps:
 - **Velocity Profiling:** Velocity for each path is generated with consideration for stop positions at intersections and acceleration limits, using linear velocity profiles.
 - **Path Selection:** The best path is selected using cost functions that consider factors like collision risk, proximity to the goal, and adherence to the lane centerline.
 
-### Testing and Validation
-- **Unit Tests:** Added to all modified parts of the code to ensure accuracy and reliability.
-- **Comparison:** Review all changes [by comparing with the last commit of the original framework](https://github.com/yosuah/nd013-c5-planning-starter/compare/976205277cbb3c6f5bda08f01522890eb4d6e3f3...HEAD). All `NOTE` comments are by me, while `TODO` comments were pre-existing.
+### Referenced
+[referenced](https://github.com/yosuah/nd013-c5-planning-starter/compare/976205277cbb3c6f5bda08f01522890eb4d6e3f3...HEAD).
 
 ![Sample screen capture from project](planning.gif)
 *(Video shown at 4x simulation speed; the simulation can be further sped up if required.)*
