@@ -1,0 +1,2 @@
+/usr/bin/ar qc libspiral_planner_lib.a CMakeFiles/spiral_planner_lib.dir/behavior_planner_FSM.cpp.o CMakeFiles/spiral_planner_lib.dir/motion_planner.cpp.o CMakeFiles/spiral_planner_lib.dir/cubic_spiral.cpp.o CMakeFiles/spiral_planner_lib.dir/spiral_base.cpp.o CMakeFiles/spiral_planner_lib.dir/integral.cpp.o CMakeFiles/spiral_planner_lib.dir/spiral_equations.cpp.o CMakeFiles/spiral_planner_lib.dir/cost_functions.cpp.o CMakeFiles/spiral_planner_lib.dir/utils.cpp.o CMakeFiles/spiral_planner_lib.dir/velocity_profile_generator.cpp.o
+/usr/bin/ranlib libspiral_planner_lib.a

@@ -1,0 +1,6 @@
+/home/teamx/udacity/nd013-c5-planning-starter/project/starter_files/CMakeFiles/spiral_planner_lib.dir
+/home/teamx/udacity/nd013-c5-planning-starter/project/starter_files/CMakeFiles/spiral_planner.dir
+/home/teamx/udacity/nd013-c5-planning-starter/project/starter_files/CMakeFiles/spiral_planner_test.dir
+/home/teamx/udacity/nd013-c5-planning-starter/project/starter_files/CMakeFiles/test.dir
+/home/teamx/udacity/nd013-c5-planning-starter/project/starter_files/CMakeFiles/edit_cache.dir
+/home/teamx/udacity/nd013-c5-planning-starter/project/starter_files/CMakeFiles/rebuild_cache.dir
