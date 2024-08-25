@@ -1,4 +1,5 @@
 # Project: Motion Planning and Decision Making for Autonomous Vehicles
+[![Udacity - Self-Driving Car Nanodegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](http://www.udacity.com/drive)
 
 In this project, you will implement two of the main components of a traditional hierarchical planner: The Behavior Planner and the Motion Planner. Both will work in unison to be able to:
 
@@ -169,41 +170,6 @@ This file will install utilities such as, `libuv1-dev`, `libssl-dev`, `libz-dev`
 
 <br/><br/>
 
-## Step 6. Update the Project Code
-
-Change to the **starter_files/** directory 
-```bash
-cd starter_files/
-```
-
-Before you start coding, we strongly recommend you look at the rubric in your classroom, against which the human Mentor will review your submission. Your submission must satisfy all rubric criteria to pass the project; otherwise, the Mentor may ask you to re-submit. 
-
-
-Update the following files as per the classroom instructions. 
-- **behavior_planner_FSM.cpp**
-- **cost_functions.cpp**
-- **motion_planner.cpp**
-- **velocity_profile_generator.cpp**
-- **planning_params.h**
-
-<br/>
-
-> **Important**: At this moment, it is important to save your work and push it back to the remote Github repository. 
-
-<br/><br/>
-
-### Update Notes
-In the previous version of the project starter code, we had **libcarla-install/** and **rpclib/** directories inside the starter files. But, those directories are no longer needed in the current version of the starter code because the current **CMakeLists.txt** file has corresponding `includes` and `libs` added at `/opt/carla-source`.
-
-To give some old context, when we had **rpclib/** directory inside the starter files, we used to compile the **rpclib** library using the following commands. 
-```bash
-cd starter_files
-rm -rf rpclib
-git clone https://github.com/rpclib/rpclib.git
-```
-This library is a **msgpack-rpc** library written using modern C++. The goal of building this library was to provide a simple RPC solution. However, all of the above-mentioned steps are **no longer needed** in the current version of the project strarter code. 
-
-<br/><br/>
 
 ## Step 7. Build and Execute the Project
 
@@ -235,6 +201,43 @@ kill id
 
 <br/><br/>
 
-## Step 8. Check the Rubric and Submit
+## Code Changes (TODO)
+This project focuses on implementing key components of a traditional hierarchical planner:
 
-Re-check the rubric in the classroom and ensure that your submission satisfies all rubric criteria to pass the project. Once you are confident, submit the project. 
+- **Behavior Planner**
+- **Motion Planner**
+
+### Objectives
+The planners work together to ensure the following:
+
+- **Obstacle Avoidance:** Safely avoid static objects (e.g., parked cars, bicycles, and trucks) that partially obstruct the lane by executing a “nudge” maneuver.
+- **Intersection Handling:** Stop at all intersections, including 3-way, 4-way intersections, and roundabouts.
+- **Lane Centering:** Track and maintain the centerline of the traveling lane.
+
+The solution is validated using the CARLA simulator.
+
+## Solution Details
+
+### Behavior Planning
+The Behavior Planner is implemented using a Finite State Machine (FSM) to manage different longitudinal cases, including:
+
+- **Lane Following**
+- **Deceleration to Stop**
+- **Stopping at Intersections**
+
+### Motion Planning
+Motion Planning is achieved through the following steps:
+
+- **Path Generation:** Multiple cubic spirals are generated at different offsets from the lane center to find feasible paths that meet constraints and avoid collisions.
+- **Collision Checking:** The ego vehicle and obstacles are represented by multiple circles to accurately detect potential collisions.
+- **Velocity Profiling:** Velocity for each path is generated with consideration for stop positions at intersections and acceleration limits, using linear velocity profiles.
+- **Path Selection:** The best path is selected using cost functions that consider factors like collision risk, proximity to the goal, and adherence to the lane centerline.
+
+### Testing and Validation
+- **Unit Tests:** Added to all modified parts of the code to ensure accuracy and reliability.
+- **Comparison:** Review all changes [by comparing with the last commit of the original framework](https://github.com/yosuah/nd013-c5-planning-starter/compare/976205277cbb3c6f5bda08f01522890eb4d6e3f3...HEAD). All `NOTE` comments are by me, while `TODO` comments were pre-existing.
+
+![Sample screen capture from project](planning_screencap_lowres_short.gif)
+*(Video shown at 4x simulation speed; the simulation can be further sped up if required.)*
+
+[Watch the higher quality video](planning.webm)
